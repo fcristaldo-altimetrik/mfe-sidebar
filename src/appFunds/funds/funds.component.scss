@@ -1,0 +1,22 @@
+.fundsWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.addFund {
+  align-self: flex-end;
+  margin-top: 3rem;
+  background: #384764;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  min-width: 114px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.addFund:hover {
+  background-color: #59698a;
+}

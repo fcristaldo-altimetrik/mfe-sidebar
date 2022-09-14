@@ -1,0 +1,36 @@
+<div
+  class="modalBackground"
+  [ngClass]="{ hidden: !activeModal }"
+  (click)="activeModal = !activeModal"
+></div>
+<div class="modalWrapper" [ngClass]="{ hidden: !activeModal }">
+  <p class="title">Add a new Fund</p>
+  <form class="fundsForm" [formGroup]="fundSubmit" (ngSubmit)="onSubmit()">
+    <div class="inputWrapper">
+      <label for="fund">Fund:</label>
+      <input
+        id="fund"
+        class="formInput"
+        formControlName="fundName"
+        autocomplete="off"
+      />
+    </div>
+    <div class="inputWrapper">
+      <label for="amount">Amount:</label>
+      <input
+        id="amount"
+        class="formInput"
+        formControlName="fundAmount"
+        autocomplete="off"
+      />
+    </div>
+    <input
+      type="submit"
+      class="submitButton"
+      value="Add"
+      [disabled]="
+        fundSubmit.value.fundName === '' || fundSubmit.value.fundAmount === ''
+      "
+    />
+  </form>
+</div>

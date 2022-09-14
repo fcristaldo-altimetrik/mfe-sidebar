@@ -1,0 +1,7 @@
+<div class="fundsWrapper">
+  <app-fund-table></app-fund-table>
+  <button *ngIf="role === 'admin'" (click)="onClick()" class="addFund">
+    Add new fund
+  </button>
+  <app-fund-modal [activeModal]="activeModal"></app-fund-modal>
+</div>

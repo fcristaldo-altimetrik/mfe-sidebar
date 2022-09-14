@@ -1,0 +1,49 @@
+.checkbox,
+.deleteWrapper {
+  cursor: pointer;
+}
+
+.tableWrapper {
+  overflow: auto;
+  height: 75vh;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 0 2rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tableWrapper thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: #384764;
+}
+
+th,
+td {
+  height: 65px;
+  text-transform: capitalize;
+  text-align: center;
+  &:nth-child(4) {
+    text-transform: none;
+  }
+}
+
+th {
+  background: #ffffff;
+  padding-top: 1rem;
+}
+
+tr {
+  border: 0px;
+  border-bottom: 0.5px solid #d9d9d9;
+}

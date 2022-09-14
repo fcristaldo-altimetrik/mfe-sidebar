@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="block-container" (click)="onUserClick()">
+    <div class="tab-wrapper" [ngClass]="{ 'active-tab': activeTab === 'User' }">
+      <img
+        src="https://riverlegacy.org/wp-content/uploads/2021/07/blank-profile-photo.jpeg"
+        alt="avatar"
+        class="avatar"
+      />
+      <p [ngStyle]="{ fontSize: '12px' }">{{ email }}</p>
+      <app-arrow-icon></app-arrow-icon>
+    </div>
+    <div
+      class="expandable-pages"
+      [ngClass]="{ expanded: expandedUser === true }"
+    >
+      <div class="tab-wrapper tab-section">
+        <p>My Profile</p>
+      </div>
+      <div class="tab-wrapper tab-section">
+        <p>Settings</p>
+      </div>
+      <div class="tab-wrapper tab-section">
+        <p>Logout</p>
+      </div>
+    </div>
+  </div>
+  <div class="block-container">
+    <div
+      (click)="onDashboardClick()"
+      class="tab-wrapper active-tab"
+      [ngClass]="{ 'active-tab': activeTab === 'Dashboard' }"
+    >
+      <app-dashboard-icon></app-dashboard-icon>
+      <p>Dashboard</p>
+      <app-arrow-icon></app-arrow-icon>
+    </div>
+    <div
+      class="expandable-pages"
+      [ngClass]="{ expanded: expandedDashboard === true }"
+    >
+      <div
+        class="tab-wrapper tab-section"
+        routerLink=""
+        routerLinkActive="active-tab tab-section-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <p href="/">Home</p>
+      </div>
+      <div
+        class="tab-wrapper tab-section"
+        routerLink="funds"
+        routerLinkActive="active-tab tab-section-active"
+      >
+        <p>Funds</p>
+      </div>
+      <div class="tab-wrapper tab-section">
+        <p>Analytics</p>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="role === 'admin'"
+    class="block-container"
+    (click)="onPagesClick()"
+  >
+    <p class="section-title">Pages</p>
+    <div
+      class="tab-wrapper"
+      [ngClass]="{ 'active-tab': activeTab === 'Pages' }"
+    >
+      <app-pages-icon></app-pages-icon>
+      <p>Pages</p>
+      <app-arrow-icon></app-arrow-icon>
+    </div>
+    <div
+      class="expandable-pages"
+      [ngClass]="{ expanded: expandedPages === true }"
+    >
+      <div class="tab-wrapper tab-section">
+        <p>Profile</p>
+      </div>
+      <div class="tab-wrapper tab-section">
+        <p>User</p>
+      </div>
+      <div class="tab-wrapper tab-section">
+        <p>Accounts</p>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="role === 'admin'"
+    class="block-container"
+    (click)="onDocumentsClick()"
+  >
+    <p class="section-title">Docs</p>
+    <div
+      class="tab-wrapper"
+      [ngClass]="{ 'active-tab': activeTab === 'Documents' }"
+    >
+      <app-document-icon></app-document-icon>
+      <p>Documentation</p>
+      <app-arrow-icon></app-arrow-icon>
+    </div>
+    <div
+      class="expandable-pages"
+      [ngClass]="{ expanded: expandedDocuments === true }"
+    >
+      <div class="tab-wrapper tab-section">
+        <p>Getting Started</p>
+      </div>
+      <div class="tab-wrapper tab-section">
+        <p>About</p>
+      </div>
+    </div>
+  </div>
+</div>
