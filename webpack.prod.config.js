@@ -4,7 +4,7 @@ const { merge } = require('webpack-merge');
 const prodConfig = {
   output: {
     uniqueName: 'funds',
-    publicPath: 'https://mfe-sidebar.vercel.app/',
+    publicPath: 'https://microfrontend-sidebar.vercel.app/',
     scriptType: 'text/javascript',
   },
 };
